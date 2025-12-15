@@ -1,24 +1,22 @@
 import boto3
 import json
 
-# Connect to DynamoDB
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table("ResumeViews")
+table = dynamodb.Table("ResumeViews")  # make sure table name matches
 
 def lambda_handler(event, context):
-    # Get current counter views
-    response = table.get_item(Key={'id': 'counter'})
-    current_views = response['Item']['views']
+    # Atomically increment the counter
+    response = table.update_item(
+        Key={"id": "counter"},
+        UpdateExpression="ADD views :inc",
+        ExpressionAttributeValues={":inc": 1},
+        ReturnValues="UPDATED_NEW"
+    )
 
-    # Add 1 new view to counter
-    new_views = current_views + 1
+    new_views = response["Attributes"]["views"]
 
-    # Put the new # of views in table
-    table.put_item(Item={"id": "counter", "views": new_views})
-
-    # Return JSON
     return {
-        'statusCode': 200,
-        "body": json.dumps({"views": int(new_views)})
+        "statusCode": 200,
+        "headers": {"Content-Type": "application/json"},
+        "body": json.dumps({"views": new_views})
     }
-
