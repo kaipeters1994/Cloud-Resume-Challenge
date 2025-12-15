@@ -1,7 +1,4 @@
-# Terraform
-.terraform/
+terraform/.terraform/
+terraform/*.zip
 *.tfstate
-*.tfstate.*
-crash.log
-*.tfvars
-*.zip
+*.tfstate.backup
