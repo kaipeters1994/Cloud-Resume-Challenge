@@ -2,3 +2,5 @@ terraform/.terraform/
 terraform/*.zip
 *.tfstate
 *.tfstate.backup
+terraform/.terraform/
+terraform/*.zip
