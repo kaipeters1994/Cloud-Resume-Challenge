@@ -1,6 +1,11 @@
-terraform/.terraform/
-terraform/*.zip
+# Terraform local files
+**/.terraform/
+**/.terraform.lock.hcl
 *.tfstate
 *.tfstate.backup
-terraform/.terraform/
-terraform/*.zip
+
+# Python cache
+__pycache__/
+
+# OS-specific
+.DS_Store
