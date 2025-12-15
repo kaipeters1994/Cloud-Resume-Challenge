@@ -52,15 +52,14 @@ FEATURES:
 4. API Gateway
 5. Unit Testing
 6. Responsive Design (Mobile & Desktop)
+7. Full Teraform version of project
 
 Screenshots include S3 Bucket & Static website, CloudFront distro & HTTPS certificate, 
 Route 53 DNS, DynamoDB table, Lambda function, API Gateway, and Pytest
 
 FUTURE ENHANCEMENTS:
-1. Lex chatbot
-2. IaC CloudFormation Script
-3. CI/CD Pipeline via GitHub Actions
-4. Terraform Script
+1. CI/CD Pipeline via GitHub Actions
+
 
 AUTHOR:
 Kai Peters
