@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kai Peters | Cloud, AI & Security</title>
+
+    <style>
+        :root {
+            --bg: #f4f4f4;
+            --card: #ffffff;
+            --text: #000;
+            --muted: #555;
+            --border: #000;
+            --link: #1a0dab;
+            --accent: #2563eb;
+        }
+
+        body.dark {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #eaeaea;
+            --muted: #aaa;
+            --border: #444;
+            --link: #8ab4f8;
+            --accent: #60a5fa;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 850px;
+            background: var(--card);
+            padding: 40px 50px;
+            border: 1px solid var(--border);
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .view-counter {
+            font-size: 13px;
+            text-align: right;
+            color: var(--muted);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin: 10px 0 15px;
+        }
+
+        .controls button {
+            padding: 6px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+        }
+
+        .cta {
+            text-align: center;
+            padding: 12px;
+            border: 1px solid var(--border);
+            background: rgba(37, 99, 235, 0.05);
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .contact {
+            font-size: 14px;
+            margin-top: 8px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        section {
+            margin-top: 25px;
+        }
+
+        section h2 {
+            font-size: 18px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        p,
+        li {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        ul {
+            margin: 8px 0 0 18px;
+            padding: 0;
+        }
+
+        .job {
+            margin-bottom: 18px;
+        }
+
+        .job-title,
+        .project-title {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .job-meta {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .skills-grid {
+            columns: 2;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 25px 20px;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            .skills-grid {
+                columns: 1;
+            }
+
+            .controls {
+                justify-content: center;
+            }
+        }
+
+        /* Print / PDF */
+        @media print {
+            body {
+                background: #ffffff;
+            }
+
+            .resume-container {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .controls,
+            .cta,
+            .view-counter {
+                display: none;
+            }
+
+            a {
+                color: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume-container">
+
+        <div class="view-counter">
+            Profile Views: <span id="view-counter">0</span>
+        </div>
+
+        <div class="controls">
+            <button id="theme-toggle">Toggle Dark Mode</button>
+            <button onclick="window.print()">Download PDF</button>
+        </div>
+
+        <div class="cta">
+            <strong>Cloud • AI • Security</strong><br>
+            AWS-focused engineer pursuing cloud security and solutions architect roles.
+        </div>
+
+        <header>
+            <h1>Kai Peters</h1>
+            <div class="contact">
+                Candia, NH •
+                kaipeters1994@gmail.com •
+                (321) 684-9395<br>
+                <a href="https://www.linkedin.com/in/peters-kai/">linkedin.com/in/peters-kai</a> •
+                <a href="https://github.com/kaipeters1994">github.com/kaipeters1994</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>SUMMARY</h2>
+            <p>
+                AWS-focused IT professional with hands-on experience deploying serverless AWS projects using
+                Infrastructure
+                as Code. Background in networking, technical pre-sales, project management, and IT support. Targeting
+                associate-level cloud security or junior solutions architect roles.
+            </p>
+        </section>
+
+        <section>
+            <h2>CERTIFICATIONS</h2>
+            <ul>
+                <li>AWS Certified Solutions Architect – Associate</li>
+                <li>AWS Certified AI Practitioner – Foundational</li>
+                <li>CompTIA Security+ (In progress – planned Jan 2026)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>SKILLS</h2>
+            <div class="skills-grid">
+                <ul>
+                    <li>EC2, S3, IAM, VPC, Lambda</li>
+                    <li>API Gateway, Route 53, CloudFront</li>
+                    <li>DynamoDB, CloudWatch, Bedrock</li>
+                    <li>TCP/IP, VLAN, VPN, SD-WAN</li>
+                    <li>VoIP, SIP, Meraki</li>
+                    <li>Linux, macOS, Windows</li>
+                    <li>Python, Terraform, GitHub</li>
+                    <li>JSON, CLI</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>PROJECTS</h2>
+
+            <div class="job">
+                <div class="project-title">AWS Cloud Resume Challenge – kp-resume.com</div>
+                <ul>
+                    <li>Designed and deployed a globally distributed serverless resume site using S3, CloudFront,
+                        Route 53, ACM, and HTTPS.</li>
+                    <li>Built a DynamoDB-backed view counter exposed via API Gateway and Lambda (Python),
+                        integrated with frontend JavaScript.</li>
+                    <li>Implemented Infrastructure as Code with Terraform, GitHub version control, IAM least privilege,
+                        and documentation.</li>
+                    <li>
+                        <a href="https://github.com/kaipeters1994/Cloud-Resume-Challenge">
+                            github.com/kaipeters1994/Cloud-Resume-Challenge
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="project-title">AWS AI Microservice – Text Summarization API</div>
+                <ul>
+                    <li>Developed a serverless AI text summarization service using Lambda (Python), API Gateway, S3,
+                        and DynamoDB.</li>
+                    <li>Integrated generative AI via Amazon Bedrock with a static frontend.</li>
+                    <li>Deployed using CloudFormation infrastructure templates.</li>
+                    <li>
+                        <a href="https://github.com/kaipeters1994/aws-ai-microservice">
+                            github.com/kaipeters1994/aws-ai-microservice
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>WORK EXPERIENCE</h2>
+
+            <div class="job">
+                <div class="job-title">Sales Engineer – Comcast Business</div>
+                <div class="job-meta">Manchester, NH | Jul 2025 – Present</div>
+                <ul>
+                    <li>Designed secure SD-WAN, DIA, and UC solutions across 40–50 engagements monthly.</li>
+                    <li>Mentored 26 sales professionals on cloud-ready networking architectures.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Project Manager 2 – Comcast Business</div>
+                <div class="job-meta">Manchester, NH | Apr 2022 – Jul 2025</div>
+                <ul>
+                    <li>Led end-to-end fiber, VoIP, internet, and video implementations for SMB customers.</li>
+                    <li>Onboarded and mentored new Project Managers.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">IT Support Tier 1 – Comcast Business</div>
+                <div class="job-meta">Manchester, NH | Oct 2020 – Apr 2022</div>
+                <ul>
+                    <li>Achieved a 95% first-call resolution rate for telephony and data services.</li>
+                    <li>Supported training and onboarding of new hires.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>EDUCATION</h2>
+            <ul>
+                <li>Bachelor of Science in Information Technology – Full Sail University (Expected Mar 2026)</li>
+                <li>Associate of Science in Information Technology – Full Sail University</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script>
+        fetch("https://irmw0sn2ba.execute-api.us-east-1.amazonaws.com/counter")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("view-counter").textContent = data.views;
+            })
+            .catch(error => console.error(error));
+
+        document.getElementById("theme-toggle").addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+        });
+    </script>
+
+</body>
+
+</html>
